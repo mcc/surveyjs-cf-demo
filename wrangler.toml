@@ -1,0 +1,11 @@
+name = "survey-api"
+main = "src/index.ts"
+compatibility_date = "2025-06-02"
+
+[[kv_namespaces]]
+binding = "SURVEY_KV"
+id = "d84d1c56d7194ba9b3d5ff685530a79a"
+
+[assets]
+directory = "./public/"
+not_found_handling = "404-page"
