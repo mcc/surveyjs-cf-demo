@@ -8,7 +8,7 @@ let currentSurveyId = null;
 
 // Load survey list
 async function loadSurveys() {
-  const response = await fetch('http://localhost:8787/api/surveys');
+  const response = await fetch('/api/surveys');
   const surveys = await response.json();
   const surveyList = document.getElementById('surveyList');
   surveyList.innerHTML = '';
@@ -25,7 +25,7 @@ async function loadSurveys() {
 
 // Edit an existing survey
 async function editSurvey(surveyId) {
-  const response = await fetch(`http://localhost:8787/api/surveys/${surveyId}`);
+  const response = await fetch(`/api/surveys/${surveyId}`);
   const surveyJson = await response.json();
   creator.JSON = surveyJson;
   jsonEditor.value = JSON.stringify(surveyJson, null, 2);
@@ -44,7 +44,7 @@ function addSurvey() {
 // Delete a survey
 async function deleteSurvey(surveyId) {
   if (confirm('Are you sure you want to delete this survey?')) {
-    await fetch(`http://localhost:8787/api/surveys/${surveyId}`, {
+    await fetch(`/api/surveys/${surveyId}`, {
       method: 'DELETE',
       headers: {
         'Authorization': localStorage.getItem('adminToken'),
@@ -63,7 +63,7 @@ creator.saveSurveyFunc = async (saveNo, callback) => {
   const surveyId = currentSurveyId || Date.now().toString();
   surveyJson.id = surveyId;
   surveyJson.title = surveyJson.title || `Survey ${surveyId}`;
-  await fetch('http://localhost:8787/api/surveys', {
+  await fetch('/api/surveys', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ document.getElementById('applyJsonBtn').addEventListener('click', () => {
 });
 
 // Update JSON editor when Creator changes
-creator.onSurveyUpdated.add(() => {
+creator.onModified.add(() => {
   jsonEditor.value = JSON.stringify(creator.JSON, null, 2);
 });
 

@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "crypto": "^1.0.1",
     "itty-router": "^5.0.18",
     "survey-core": "^2.1.0",
     "survey-creator-core": "^2.1.0",

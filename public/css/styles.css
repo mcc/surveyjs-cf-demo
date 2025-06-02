@@ -5,18 +5,13 @@ body {
   padding: 20px;
 }
 
+h1 {
+  margin-bottom: 20px;
+}
+
 #surveyContainer, #surveyCreator {
   border: 1px solid #ddd;
   padding: 20px;
-}
-
-#surveyManagement {
-  display: flex;
-  gap: 20px;
-}
-
-#surveyListContainer {
-  width: 30%;
 }
 
 #surveyList {
@@ -29,19 +24,27 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
 }
 
-#surveyList button {
+#surveyList button, #createSurveyBtn, #backBtn, #applyJsonBtn, #saveSurveyBtn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
   margin-left: 10px;
 }
 
-#surveyEditorContainer {
-  width: 70%;
+#surveyList button:hover, #createSurveyBtn:hover, #backBtn:hover, #applyJsonBtn:hover, #saveSurveyBtn:hover {
+  background-color: #0056b3;
 }
 
 #editorLayout {
   display: flex;
   gap: 20px;
+  margin-top: 20px;
 }
 
 #surveyCreator {
@@ -55,11 +58,15 @@ body {
 }
 
 #jsonEditor {
-  height: 400px;
+  height: 500px;
   resize: vertical;
   font-family: monospace;
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-#applyJsonBtn {
+#editorButtons {
   margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }

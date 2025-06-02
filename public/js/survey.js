@@ -1,6 +1,7 @@
 async function loadSurveys() {
   const response = await fetch('/api/surveys');
-  const surveys = await response.json();
+  const result = await response.json();
+  const surveys = result.data || result; // Handle encapsulated data
   const surveyList = document.getElementById('survey-list');
   surveys.forEach(survey => {
     const li = document.createElement('li');
@@ -14,7 +15,8 @@ async function loadSurvey() {
   const surveyId = urlParams.get('id');
   if (surveyId) {
     const response = await fetch(`/api/surveys/${surveyId}`);
-    const surveyJson = await response.json();
+    const result = await response.json();
+    const surveyJson = result.data || result; // Handle encapsulated data
     const survey = new Survey.Model(surveyJson);
     survey.onComplete.add(async (sender) => {
       await fetch('/api/submissions', {
