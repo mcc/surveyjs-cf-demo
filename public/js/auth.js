@@ -9,8 +9,9 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   });
   if (response.ok) {
     const { token } = await response.json();
-    localStorage.setItem('adminToken', token);
-    window.location.href = '/admin.html';
+    localStorage.setItem('adminToken', token);// In public/js/auth.js
+    window.location.href = '/manage.html';
+    //window.location.href = '/admin.html';
   } else {
     alert('Invalid credentials');
   }

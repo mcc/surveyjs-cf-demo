@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Manage Surveys</title>
+  <link rel="stylesheet" href="/css/styles.css">
+      <!-- SurveyJS Form Library resources -->
+    <link  href="https://unpkg.com/survey-core/survey-core.min.css" type="text/css" rel="stylesheet">
+    <script src="https://unpkg.com/survey-core/survey.core.min.js"></script>
+    <script src="https://unpkg.com/survey-js-ui/survey-js-ui.min.js"></script>
+
+    <!-- (Optional) Predefined theme configurations -->
+    <script src="https://unpkg.com/survey-core/themes/index.min.js"></script>
+    
+    <!-- Survey Creator resources -->
+    <link  href="https://unpkg.com/survey-creator-core/survey-creator-core.min.css" type="text/css" rel="stylesheet">
+    <script src="https://unpkg.com/survey-creator-core/survey-creator-core.min.js"></script>
+    <script src="https://unpkg.com/survey-creator-js/survey-creator-js.min.js"></script>
+    <!-- ... -->
+</head>
+<body>
+  <h1>Manage Surveys</h1>
+  <div id="surveyManagement">
+    <div id="surveyListContainer">
+      <h2>Surveys</h2>
+      <ul id="surveyList"></ul>
+      <button id="addSurveyBtn">Add New Survey</button>
+    </div>
+    <div id="surveyEditorContainer">
+      <h2 id="editorTitle">Create/Edit Survey</h2>
+      <div id="editorLayout">
+        <div id="surveyCreator"></div>
+        <div id="jsonEditorContainer">
+          <textarea id="jsonEditor" placeholder="Paste or edit survey JSON here"></textarea>
+          <button id="applyJsonBtn">Apply JSON</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
