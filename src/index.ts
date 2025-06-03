@@ -74,7 +74,7 @@ router.get('/api/surveys/:id', async ({ params }, env: Env) => {
 });
 
 // Create or update a survey (admin or API key)
-router.post('/api/surveys', async ({ headers, json }, env: Env) => {
+router.post('/api/surveys', async ({ headers, json, url }, env: Env) => {
   const authHeader = headers.get('Authorization');
   if (!authHeader) {
     throw new Error('Authorization header missing', { status: 401 });
@@ -85,8 +85,11 @@ router.post('/api/surveys', async ({ headers, json }, env: Env) => {
     const survey = await json();
     const surveyId = survey.id || Date.now().toString();
     await env.SURVEY_KV.put(surveyId, JSON.stringify(survey));
+    const surveyUrl = `${new URL(url).origin}/survey.html?id=${surveyId}`;
     return {
       message: 'Survey saved',
+      surveyId,
+      surveyUrl,
       headers: { 'Access-Control-Allow-Origin': '*' },
     };
   } else if (authHeader.startsWith('Bearer ')) {
@@ -97,8 +100,11 @@ router.post('/api/surveys', async ({ headers, json }, env: Env) => {
       const survey = await json();
       const surveyId = survey.id || Date.now().toString();
       await env.SURVEY_KV.put(surveyId, JSON.stringify(survey));
+      const surveyUrl = `${new URL(url).origin}/survey.html?id=${surveyId}`;
       return {
         message: 'Survey saved',
+        surveyId,
+        surveyUrl,
         headers: { 'Access-Control-Allow-Origin': '*' },
       };
     } catch (e) {

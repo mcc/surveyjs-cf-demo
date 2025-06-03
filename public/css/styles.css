@@ -1,15 +1,21 @@
 body {
   font-family: Arial, sans-serif;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   margin-bottom: 20px;
 }
 
-#surveyContainer, #surveyCreator {
+#surveyContainer {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  border: none; /* Remove border for cleaner look */
+}
+
+#surveyCreator {
   border: 1px solid #ddd;
   padding: 20px;
 }
