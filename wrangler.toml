@@ -1,6 +1,9 @@
 name = "survey-api"
 main = "src/index.ts"
 compatibility_date = "2025-06-02"
+routes = [
+  { pattern = "survey-ai-demo.collect.skin", custom_domain = true }
+]
 
 [[kv_namespaces]]
 binding = "SURVEY_KV"
