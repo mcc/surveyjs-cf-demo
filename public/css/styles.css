@@ -16,90 +16,24 @@ h1 {
   box-sizing: border-box;
 }
 
-#surveyContainer .sv-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 0 10px;
-  /* Minimal padding for content */
-  box-sizing: border-box;
-}
-
-#surveyContainer .sv-question {
-  margin: 1rem 0;
-  font-size: 1rem;
-  /* Base font size */
-}
-
-#surveyContainer .sv-question__title {
-  font-size: 1.2rem;
-  line-height: 1.4;
-}
-
-#surveyContainer .sv-button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-#surveyContainer .sv-button-group__item {
-  flex: 1;
-  min-width: 100px;
-  padding: 0.75rem;
-  font-size: 1rem;
-  min-height: 44px;
-  /* Touch-friendly */
-}
-
-#surveyContainer input[type="text"],
-#surveyContainer textarea {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-/* Tablet (768px - 1024px) */
-@media (max-width: 1024px) {
-  #surveyContainer .sv-question__title {
-    font-size: 1.1rem;
-  }
-
-  #surveyContainer .sv-button-group__item {
-    min-width: 80px;
-    font-size: 0.9rem;
-  }
-}
-
-/* Mobile (below 768px) */
+/* Mobile view adjustments */
 @media (max-width: 768px) {
-  #surveyContainer .sv-container {
-    padding: 0 5px;
-  }
-
-  #surveyContainer .sv-question {
-    margin: 0.75rem 0;
-    font-size: 0.9rem;
-  }
-
   #surveyContainer .sv-question__title {
-    font-size: 1rem;
+    font-size: 1.125rem; /* ~18px */
+    line-height: 1.4;
   }
-
-  #surveyContainer .sv-button-group {
-    flex-direction: column;
+  #surveyContainer .sv-question__content {
+    font-size: 1rem; /* ~16px */
   }
-
   #surveyContainer .sv-button-group__item {
-    width: 100%;
-    min-width: auto;
-    font-size: 0.85rem;
-    padding: 0.5rem;
+    font-size: 1rem; /* ~16px */
+    min-height: 48px; /* Larger tap target for mobile */
+    padding: 0.75rem;
   }
-
   #surveyContainer input[type="text"],
   #surveyContainer textarea {
-    font-size: 0.9rem;
-    padding: 0.4rem;
+    font-size: 1rem; /* ~16px */
+    padding: 0.5rem;
   }
 }
 
@@ -122,11 +56,7 @@ h1 {
   border: 1px solid #eee;
 }
 
-#surveyList button,
-#createSurveyBtn,
-#backBtn,
-#applyJsonBtn,
-#saveSurveyBtn {
+#surveyList button, #createSurveyBtn, #backBtn, #applyJsonBtn, #saveSurveyBtn {
   padding: 8px 12px;
   background-color: #007bff;
   color: white;
@@ -135,11 +65,7 @@ h1 {
   margin-left: 10px;
 }
 
-#surveyList button:hover,
-#createSurveyBtn:hover,
-#backBtn:hover,
-#applyJsonBtn:hover,
-#saveSurveyBtn:hover {
+#surveyList button:hover, #createSurveyBtn:hover, #backBtn:hover, #applyJsonBtn:hover, #saveSurveyBtn:hover {
   background-color: #0056b3;
 }
 
