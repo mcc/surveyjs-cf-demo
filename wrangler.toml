@@ -1,4 +1,4 @@
-name = "survey-api"
+name = "surveyjs-cf-demo"
 main = "src/index.ts"
 compatibility_date = "2025-06-02"
 routes = [
