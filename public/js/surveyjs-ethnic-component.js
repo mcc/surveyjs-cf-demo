@@ -1,5 +1,3 @@
-SurveyCreatorCore.registerCreatorTheme(SurveyCreatorTheme); // Add predefined Survey Creator UI themes
-
 Survey.ComponentCollection.Instance.add({
     name: "ethnic",
     title: {

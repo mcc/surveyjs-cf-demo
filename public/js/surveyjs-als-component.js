@@ -2,7 +2,7 @@
 
 // Register the custom question type with SurveyJS using ComponentCollection
 Survey.ComponentCollection.Instance.add({
-    name: "hkaddressdropdown",
+    name: "als-address",
     title: "Hong Kong Address Lookup", // Title for the toolbox/UI
     baseQuestion: "dropdown", // Specifies that our question type extends 'dropdown'
     questionJSON: { // Default JSON properties when this question is created
