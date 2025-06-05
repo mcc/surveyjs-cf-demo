@@ -18,6 +18,7 @@ async function loadSurvey() {
     const result = await response.json();
     const surveyJson = result.data || result; // Handle encapsulated data
     const survey = new Survey.Model(surveyJson);
+    initAlsComponent(survey);
     survey.onComplete.add(async (sender) => {
       await fetch('/api/submissions', {
         method: 'POST',
